@@ -1,0 +1,97 @@
+@mixin service-odd {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+@mixin service-even {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    min-height: 2100px;
+    background-color: #F0FFFF;
+    grid-template-rows: 600px 1500px;
+    .front {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 600px;
+        background-color: aqua;
+        h1, h3 {
+            text-align: center;
+        }
+    }
+    .services {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        min-height: 1500px;
+        background-color: beige;
+        display: grid;
+        grid-template-rows: 10vh repeat(9, 60vh);
+        .title {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            h1 {
+                text-align: center;
+            }
+        }
+        .web-development {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            width: 100%;
+            height: 300vh;
+            background-color: brown;
+            @include service-odd();
+        }
+        .mobile-development {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            background-color: pink;
+            @include service-even();
+        }
+        .desktop-development {
+            grid-row-start: 4;
+            grid-row-end: 5;
+            background-color: lightblue;
+            @include service-odd();
+        }
+        .dev-ops {
+            grid-row-start: 5;
+            grid-row-end: 6;
+            background-color: yellow;
+            @include service-even();
+        }
+        .data-analysis {
+            grid-row-start: 6;
+            grid-row-end: 7;
+            background-color: yellowgreen;
+            @include service-odd();
+        }
+        .video-and-photo {
+            grid-row-start: 7;
+            grid-row-end: 8;
+            background-color: orange;
+            @include service-even();
+        }
+        .event-organising {
+            grid-row-start: 8;
+            grid-row-end: 9;
+            background-color: purple;
+            @include service-odd();
+        }
+        .webshop {
+            grid-row-start: 9;
+            grid-row-end: 10;
+            background-color: lightgreen;
+            @include service-even();
+        }
+    }
+    .footer {
+        width: 100%;
+        height: 10vh;
+        background-color: bisque;
+    }
+}

@@ -1,0 +1,40 @@
+<h1>Új gépjármű hozzáadása</h1>
+<h3>Alapadatok</h3>
+<mat-form-field class="example-full-width">
+  <mat-label>Hosszúság (méterben)...</mat-label>
+  <input matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Szélesség (méterben)...</mat-label>
+  <input matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Magasság (méterben)...</mat-label>
+  <input matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Öntömeg (méterben)...</mat-label>
+  <input matInput />
+</mat-form-field>
+<br />
+
+<mat-form-field>
+  <mat-label>Kategória</mat-label>
+  <mat-select>
+    @for (categorie of categories; track categorie) {
+    <mat-option [value]="categorie.value">{{ categorie.viewValue }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+<br />
+<mat-form-field>
+  <mat-label>Üzemanyag típusa</mat-label>
+  <mat-select>
+    @for (food of foods; track food) {
+    <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
